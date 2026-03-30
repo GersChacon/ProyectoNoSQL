@@ -1,0 +1,2156 @@
+{
+  "info": {
+    "_postman_id": "64091466-4a22-477e-8db6-bbd8c4cf0ace",
+    "name": "Proyecto",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "43595483",
+    "_collection_link": "https://go.postman.co/collection/43595483-64091466-4a22-477e-8db6-bbd8c4cf0ace?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Roles",
+      "item": [
+        {
+          "name": "Crear Rol",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"admin\",\n  \"descripcion\": \"Acceso total al sistema\",\n  \"permisos\": [\n    \"gestionar_fincas\",\n    \"gestionar_recolectores\",\n    \"configurar_precios\",\n    \"generar_reportes\",\n    \"gestionar_usuarios\",\n    \"ver_auditoria\"\n  ],\n  \"activo\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/roles",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "roles"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Rol por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/roles/69cafd2b1c8b4910bf0a67c0",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "roles",
+                "69cafd2b1c8b4910bf0a67c0"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar Rol",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"descripcion\": \"Acceso total al sistema - actualizado\",\n  \"activo\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/roles/69cafd2b1c8b4910bf0a67c0",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "roles",
+                "69cafd2b1c8b4910bf0a67c0"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar Rol",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/roles/69cafd2b1c8b4910bf0a67c0",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "roles",
+                "69cafd2b1c8b4910bf0a67c0"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Roles Activos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/roles/activos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "roles",
+                "activos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Roles por Permiso",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/roles/permiso/gestionar_fincas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "roles",
+                "permiso",
+                "gestionar_fincas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Resumen de Permisos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/roles/resumen-permisos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "roles",
+                "resumen-permisos"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Usuarios",
+      "item": [
+        {
+          "name": "Crear Usuario",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Esteba Chacon\",\n  \"correo\": \"estebanchacon@gmail.com\",\n  \"contrasena_hash\": \"Hola\",\n  \"rol_id\": \"69cafd2b1c8b4910bf0a67c0\",\n  \"activo\": true,\n  \"preferencias\": {\n    \"idioma\": \"es\",\n    \"notificaciones_email\": true\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/usuarios",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Usuario por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/usuarios/aaa000000000000000000002",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "usuarios",
+                "aaa000000000000000000002"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar Usuario",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ultimo_acceso\": \"2026-03-30T10:00:00.000Z\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/usuarios/aaa000000000000000000002",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "usuarios",
+                "aaa000000000000000000002"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar Usuario",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/usuarios/aaa000000000000000000002",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "usuarios",
+                "aaa000000000000000000002"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Usuarios Activos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/usuarios/activos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "usuarios",
+                "activos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Usuarios por Rol",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/usuarios/rol/aaa000000000000000000001",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "usuarios",
+                "rol",
+                "aaa000000000000000000001"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Usuarios Acceso Reciente (Ultimo año)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/usuarios/acceso-reciente/365",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "usuarios",
+                "acceso-reciente",
+                "365"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Fincas",
+      "item": [
+        {
+          "name": "Crear Finca",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Finca Grande\",\n  \"ubicacion\": {\n    \"provincia\": \"Heredia\",\n    \"canton\": \"San Rafael\",\n    \"coordenadas\": { \"lat\": 10.1024, \"lng\": -84.3891 }\n  },\n  \"tamano_hectareas\": 12.5,\n  \"propietario\": {\n    \"nombre\": \"Victor González\",\n    \"telefono\": \"8888-0001\",\n    \"correo\": \"vgonzalez@finca.cr\"\n  },\n  \"activa\": true,\n  \"variedades_cafe\": [\"Caturra\", \"Catuai\"]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/fincas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "fincas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Finca por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/fincas/aaa000000000000000000003",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "fincas",
+                "aaa000000000000000000003"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar Finca",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tamano_hectareas\": 15.0,\n  \"activa\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/fincas/aaa000000000000000000003",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "fincas",
+                "aaa000000000000000000003"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar Finca",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/fincas/aaa000000000000000000003",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "fincas",
+                "aaa000000000000000000003"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Fincas Activas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/fincas/activas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "fincas",
+                "activas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Fincas por Provincia",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/fincas/provincia/Heredia",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "fincas",
+                "provincia",
+                "Heredia"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Promedio Tamaño Fincas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/fincas/promedio-tamano",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "fincas",
+                "promedio-tamano"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Recolectores",
+      "item": [
+        {
+          "name": "Crear Recolector",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"identificacion\": \"117710270\",\n  \"nombre\": \"Gerson Chacon\",\n  \"telefono\": \"7777-1234\",\n  \"correo\": \"Gerson@gmail.com\",\n  \"fecha_nacimiento\": \"2000-02-03\",\n  \"activo\": true,\n  \"historial_fincas\": [\n    {\n      \"finca_id\": \"aaa000000000000000000003\",\n      \"nombre_finca\": \"Finca La Esperanza\",\n      \"temporadas\": [\"2024\", \"2025\"]\n    },\n    {\n      \"finca_id\": \"69caff781c8b4910bf0a67d7\",\n      \"nombre_finca\": \"Finca Grande\",\n      \"temporadas\": [\"2024\", \"2025\"]\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/recolectores",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "recolectores"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Recolector por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/recolectores/69cb006f1c8b4910bf0a67df",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "recolectores",
+                "69cb006f1c8b4910bf0a67df"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar Recolector",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"telefono\": \"7777-9999\",\n  \"activo\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/recolectores/69cb006f1c8b4910bf0a67df",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "recolectores",
+                "69cb006f1c8b4910bf0a67df"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar Recolector",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/recolectores/69cb006f1c8b4910bf0a67df",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "recolectores",
+                "69cb006f1c8b4910bf0a67df"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Recolectores Activos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/recolectores/activos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "recolectores",
+                "activos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Recolectores por Nombre",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/recolectores/nombre/Juan",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "recolectores",
+                "nombre",
+                "Juan"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Recolectores con Múltiples Fincas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/recolectores/multiples-fincas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "recolectores",
+                "multiples-fincas"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Cortes",
+      "item": [
+        {
+          "name": "Crear Corte",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Corte #1 - Diciembre 2025\",\n  \"finca_id\": \"aaa000000000000000000003\",\n  \"fecha_inicio\": \"2025-11-01T00:00:00.000Z\",\n  \"fecha_fin\": \"2025-12-31T00:00:00.000Z\",\n  \"estado\": \"activo\",\n  \"total_cajuelas\": 0,\n  \"total_pagado\": 0,\n  \"notas\": \"Temporada principal\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/cortes",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "cortes"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Corte por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/cortes/aaa000000000000000000004",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "cortes",
+                "aaa000000000000000000004"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar Corte",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"total_cajuelas\": 150,\n  \"total_pagado\": 225000,\n  \"estado\": \"activo\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/cortes/aaa000000000000000000004",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "cortes",
+                "aaa000000000000000000004"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar Corte",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/cortes/aaa000000000000000000004",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "cortes",
+                "aaa000000000000000000004"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cortes Activos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/cortes/activos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "cortes",
+                "activos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cortes por Finca",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/cortes/finca/aaa000000000000000000003",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "cortes",
+                "finca",
+                "aaa000000000000000000003"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Resumen de Producción",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/cortes/resumen-produccion",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "cortes",
+                "resumen-produccion"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Precios",
+      "item": [
+        {
+          "name": "Crear Precio",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"valor_cajuela\": 1500,\n  \"valor_cuartillo\": 375,\n  \"moneda\": \"CRC\",\n  \"vigente_desde\": \"2025-11-01T00:00:00.000Z\",\n  \"vigente_hasta\": null,\n  \"activo\": true,\n  \"creado_por\": \"aaa000000000000000000002\",\n  \"notas\": \"Ajuste por alza internacional\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/precios",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "precios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Precio por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/precios/aaa000000000000000000007",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "precios",
+                "aaa000000000000000000007"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar Precio",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"valor_cajuela\": 1600,\n  \"valor_cuartillo\": 400,\n  \"notas\": \"Nuevo ajuste de precio\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/precios/aaa000000000000000000007",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "precios",
+                "aaa000000000000000000007"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar Precio",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/precios/aaa000000000000000000007",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "precios",
+                "aaa000000000000000000007"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Precio Vigente",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/precios/vigente",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "precios",
+                "vigente"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Historial de Precios",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/precios/historial",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "precios",
+                "historial"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Promedio Valor Cajuela",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/precios/promedio-cajuela",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "precios",
+                "promedio-cajuela"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Asignaciones",
+      "item": [
+        {
+          "name": "Crear Asignación",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"recolector_id\": \"aaa000000000000000000005\",\n  \"finca_id\": \"aaa000000000000000000003\",\n  \"corte_id\": \"aaa000000000000000000004\",\n  \"fecha_inicio\": \"2025-11-01T00:00:00.000Z\",\n  \"fecha_fin\": null,\n  \"activa\": true,\n  \"registrado_por\": \"aaa000000000000000000002\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/asignaciones",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "asignaciones"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Asignación por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/asignaciones/69cb01fd1c8b4910bf0a67f7",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "asignaciones",
+                "69cb01fd1c8b4910bf0a67f7"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar Asignación",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"activa\": false,\n  \"fecha_fin\": \"2025-12-31T00:00:00.000Z\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/asignaciones/69cb01fd1c8b4910bf0a67f7",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "asignaciones",
+                "69cb01fd1c8b4910bf0a67f7"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar Asignación",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/asignaciones/69cb01fd1c8b4910bf0a67f7",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "asignaciones",
+                "69cb01fd1c8b4910bf0a67f7"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Asignaciones Activas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/asignaciones/activas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "asignaciones",
+                "activas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Asignaciones por Finca",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/asignaciones/finca/aaa000000000000000000003",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "asignaciones",
+                "finca",
+                "aaa000000000000000000003"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Asignaciones por Recolector",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/asignaciones/recolector/aaa000000000000000000005",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "asignaciones",
+                "recolector",
+                "aaa000000000000000000005"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Recolecciones",
+      "item": [
+        {
+          "name": "Crear Recolección",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fecha\": \"2025-12-10T00:00:00.000Z\",\n  \"recolector\": {\n    \"id\": \"aaa000000000000000000005\",\n    \"nombre\": \"Juan Pérez Solano\",\n    \"identificacion\": \"1-2345-6789\"\n  },\n  \"finca\": {\n    \"id\": \"aaa000000000000000000003\",\n    \"nombre\": \"Finca La Esperanza\"\n  },\n  \"corte\": {\n    \"id\": \"aaa000000000000000000004\",\n    \"nombre\": \"Corte #1 - Diciembre 2025\"\n  },\n  \"precio_aplicado\": {\n    \"id\": \"aaa000000000000000000007\",\n    \"valor_cajuela\": 1500,\n    \"valor_cuartillo\": 375,\n    \"moneda\": \"CRC\"\n  },\n  \"cantidad_cajuelas\": 25,\n  \"cantidad_cuartillos\": 2,\n  \"pago_total\": 18750,\n  \"pagado\": false,\n  \"registrado_por\": \"aaa000000000000000000002\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/recolecciones",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "recolecciones"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Recolección por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/recolecciones/aaa000000000000000000008",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "recolecciones",
+                "aaa000000000000000000008"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar Recolección",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cantidad_cajuelas\": 15,\n  \"pago_total\": 22500\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/recolecciones/aaa000000000000000000008",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "recolecciones",
+                "aaa000000000000000000008"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar Recolección",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/recolecciones/aaa000000000000000000008",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "recolecciones",
+                "aaa000000000000000000008"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Recolecciones No Pagadas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/recolecciones/no-pagadas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "recolecciones",
+                "no-pagadas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Total por Recolector",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/recolecciones/total-por-recolector",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "recolecciones",
+                "total-por-recolector"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Pagos",
+      "item": [
+        {
+          "name": "Crear Pago",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"recolector_id\": \"aaa000000000000000000005\",\n  \"corte_id\": \"aaa000000000000000000004\",\n  \"finca_id\": \"aaa000000000000000000003\",\n  \"recolecciones_ids\": [\"aaa000000000000000000008\"],\n  \"total_cajuelas\": 87,\n  \"total_cuartillos\": 12,\n  \"monto_total\": 134250,\n  \"moneda\": \"CRC\",\n  \"metodo_pago\": \"efectivo\",\n  \"estado\": \"completado\",\n  \"fecha_liquidacion\": \"2025-12-20T10:00:00.000Z\",\n  \"procesado_por\": \"aaa000000000000000000002\",\n  \"comprobante_url\": null\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/pagos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "pagos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Pago por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/pagos/aaa000000000000000000009",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "pagos",
+                "aaa000000000000000000009"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar Pago",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"estado\": \"completado\",\n  \"comprobante_url\": \"/comprobantes/pago_001.pdf\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/pagos/aaa000000000000000000009",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "pagos",
+                "aaa000000000000000000009"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar Pago",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/pagos/aaa000000000000000000009",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "pagos",
+                "aaa000000000000000000009"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Pagos Pendientes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/pagos/pendientes",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "pagos",
+                "pendientes"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Pagos por Recolector",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/pagos/recolector/aaa000000000000000000005",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "pagos",
+                "recolector",
+                "aaa000000000000000000005"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Total Pagado por Corte",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/pagos/corte/aaa000000000000000000004/total",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "pagos",
+                "corte",
+                "aaa000000000000000000004",
+                "total"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Notificaciones",
+      "item": [
+        {
+          "name": "Crear Notificación",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"usuario_id\": \"aaa000000000000000000002\",\n  \"tipo\": \"alerta_precio\",\n  \"titulo\": \"Precio actualizado\",\n  \"mensaje\": \"El precio por cajuela se actualizó a 1500.\",\n  \"leida\": false,\n  \"prioridad\": \"media\",\n  \"enlace\": \"/precios\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/notificaciones",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "notificaciones"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Notificación por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/notificaciones/aaa000000000000000000011",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "notificaciones",
+                "aaa000000000000000000011"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar Notificación",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"leida\": true,\n  \"fecha_lectura\": \"2026-03-30T10:00:00.000Z\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/notificaciones/aaa000000000000000000011",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "notificaciones",
+                "aaa000000000000000000011"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar Notificación",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/notificaciones/aaa000000000000000000011",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "notificaciones",
+                "aaa000000000000000000011"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "No Leídas por Usuario",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/notificaciones/no-leidas/aaa000000000000000000002",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "notificaciones",
+                "no-leidas",
+                "aaa000000000000000000002"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Notificaciones por Prioridad",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/notificaciones/prioridad/media",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "notificaciones",
+                "prioridad",
+                "media"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Resumen por Tipo",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/notificaciones/resumen-tipo",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "notificaciones",
+                "resumen-tipo"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Reportes",
+      "item": [
+        {
+          "name": "Crear Reporte",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"tipo\": \"produccion_diaria\",\n  \"titulo\": \"Reporte Diciembre 2025\",\n  \"parametros\": {\n    \"finca_id\": \"aaa000000000000000000003\",\n    \"corte_id\": \"aaa000000000000000000004\",\n    \"fecha_desde\": \"2025-12-01T00:00:00.000Z\",\n    \"fecha_hasta\": \"2025-12-31T00:00:00.000Z\"\n  },\n  \"resumen\": {\n    \"total_recolectores\": 15,\n    \"total_cajuelas\": 1240,\n    \"total_pagado\": 1860000\n  },\n  \"formato\": \"PDF\",\n  \"url_archivo\": \"/reportes/dic2025.pdf\",\n  \"generado_por\": \"PONER_ID_USUARIO\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/reportes",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "reportes"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Reporte por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/reportes/aaa000000000000000000010",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "reportes",
+                "aaa000000000000000000010"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar Reporte",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"url_archivo\": \"/reportes/dic2025_v2.pdf\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/reportes/aaa000000000000000000010",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "reportes",
+                "aaa000000000000000000010"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar Reporte",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/reportes/aaa000000000000000000010",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "reportes",
+                "aaa000000000000000000010"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Reportes por Tipo",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/reportes/tipo/produccion_diaria",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "reportes",
+                "tipo",
+                "produccion_diaria"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Resumen General de Producción",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/reportes/resumen-produccion",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "reportes",
+                "resumen-produccion"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Reportes Recientes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/reportes/recientes/5",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "reportes",
+                "recientes",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Auditoria",
+      "item": [
+        {
+          "name": "Crear Registro de Auditoría",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"usuario_id\": \"aaa000000000000000000002\",\n  \"nombre_usuario\": \"Gerson Chacon\",\n  \"accion\": \"modificar_recoleccion\",\n  \"coleccion_afectada\": \"recolecciones\",\n  \"documento_id\": \"aaa000000000000000000008\",\n  \"datos_anteriores\": {\n    \"cantidad_cajuelas\": 10,\n    \"pago_total\": 15000\n  },\n  \"datos_nuevos\": {\n    \"cantidad_cajuelas\": 12,\n    \"pago_total\": 18000\n  },\n  \"ip_origen\": \"192.168.1.1\",\n  \"motivo\": \"Corrección de digitación\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/auditoria",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auditoria"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Registro por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/auditoria/69cb04b9186146eef5f30175",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auditoria",
+                "69cb04b9186146eef5f30175"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Actualizar Registro de Auditoría",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"motivo\": \"Corrección de digitación - revisado\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/auditoria/69cb04b9186146eef5f30175",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auditoria",
+                "69cb04b9186146eef5f30175"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar Registro de Auditoría",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/auditoria/69cb04b9186146eef5f30175",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auditoria",
+                "69cb04b9186146eef5f30175"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Acciones por Usuario",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/auditoria/usuario/aaa000000000000000000002",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auditoria",
+                "usuario",
+                "aaa000000000000000000002"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Acciones por Colección",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/auditoria/coleccion/recolecciones",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auditoria",
+                "coleccion",
+                "recolecciones"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Auditoría Reciente",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/auditoria/reciente/10",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auditoria",
+                "reciente",
+                "10"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
