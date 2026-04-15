@@ -1,0 +1,320 @@
+:root {
+  --bg-dark: #16110d;
+  --brown-1: #2b1d15;
+  --brown-2: #4e3424;
+  --brown-3: #7a5235;
+  --gold: #c7a06a;
+  --cream: #f6f1ea;
+  --cream-2: #ede4d7;
+  --text: #2f241d;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text);
+  background: var(--cream);
+}
+
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 0.4px;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.55)),
+    url('https://img.freepik.com/premium-photo/celebration-joy-colombian-coffee-farmers-successful-harvest-season-planta_622540-11485.jpg') center/cover no-repeat;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.overlay {
+  display: none;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 56px;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.hero-content {
+  max-width: 760px;
+  padding: 0 56px 90px;
+}
+
+.eyebrow,
+.section-label {
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.hero-content h1 {
+  font-size: clamp(3rem, 7vw, 5.4rem);
+  line-height: 0.95;
+  margin-bottom: 18px;
+}
+
+.hero-content p {
+  max-width: 620px;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.92);
+  margin-bottom: 26px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  text-decoration: none;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: #1a130d;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  border: 1px solid rgba(255,255,255,0.45);
+  color: white;
+  background: transparent;
+}
+
+/* SECCIONES */
+.section {
+  width: 100%;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 78vh;
+}
+
+.image-block {
+  min-height: 420px;
+}
+
+.image-story {
+  background: url('img/plantacion.jpg') center/cover no-repeat;
+}
+
+.image-harvest {
+  background: url('img/cosecha.jpg') center/cover no-repeat;
+}
+
+.text-block {
+  background: var(--cream);
+  padding: 70px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.light-block {
+  background: #f8f4ee;
+}
+
+.text-block h2,
+.banner-content h2,
+.process-content h2,
+.system-card h2 {
+  font-size: clamp(2.6rem, 4vw, 4.3rem);
+  margin-bottom: 18px;
+  color: var(--brown-2); /* 👈 café correcto */
+}
+
+.text-block p,
+.system-card p,
+.process-content p {
+  line-height: 1.9;
+  color: #0f0e0e;
+  margin-bottom: 16px;
+}
+
+/* ===== BANNER ARREGLADO ===== */
+.banner {
+  background: white;
+  padding: 80px 20px;
+  min-height: auto;
+}
+
+.banner-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.banner * {
+  color: #4e3424;
+}
+
+/* TARJETAS */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.feature-card {
+  background: white;
+  border: 1px solid #e5d7c8;
+  border-radius: 24px;
+  padding: 28px;
+}
+
+.feature-number {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  color: var(--gold);
+}
+
+.feature-card h3 {
+  font-size: 1.8rem;
+  color: #4e3424;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  line-height: 1.8;
+  color: #6b4f3a;
+}
+
+/* LISTAS */
+.bullet-list {
+  padding-left: 18px;
+  margin-top: 10px;
+}
+
+.bullet-list li {
+  margin-bottom: 10px;
+  color: #5d4c40;
+}
+
+/* PROCESS */
+.process-section {
+  min-height: 68vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)),
+    url('https://www.nacion.com/resizer/JQJkg3PoAcQh1MThp3IcUWf8W6Y=/1200x0/center/middle/filters:quality(100)/arc-anglerfish-arc2-prod-gruponacion.s3.amazonaws.com/public/SQ6TB6O2BVCWLDSCTJ234W3TDU.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.process-content h2 {
+  color: white;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+}
+
+.process-content p {
+  color: white;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+/* SYSTEM */
+.system-section {
+  background: linear-gradient(135deg, #f6f1e8, #ebe1d4);
+  padding: 70px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.system-card {
+  width: 100%;
+  max-width: 860px;
+  background: white;
+  border-radius: 32px;
+  padding: 50px;
+  box-shadow: 0 20px 50px rgba(41, 28, 20, 0.12);
+  text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    flex-direction: column;
+    gap: 18px;
+    padding: 24px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-content,
+  .text-block {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .system-card {
+    padding: 32px 24px;
+  }
+}
