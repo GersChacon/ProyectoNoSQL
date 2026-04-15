@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+=======
+// src/app.js
+const express = require('express');
+const bodyParser = require('body-parser');
+>>>>>>> e0b7f66a48977a48d14cf7b2a034215f6b1ddb00
 const connectDB = require('./config/db');
 
 const asignacionesRoutes    = require('./routes/asignacionesRoutes');
@@ -35,6 +41,7 @@ app.use('/api', reportesRoutes);
 app.use('/api', rolesRoutes);
 app.use('/api', usuariosRoutes);
 
+<<<<<<< HEAD
 app.use(express.static(path.join(__dirname, 'Publico')));
 
 app.get('/', (req, res) => {
@@ -43,3 +50,7 @@ app.get('/', (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Servidor corriendo en el puerto ${PORT}`));
+=======
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Servidor corriendo en el puerto ${PORT}`));
+>>>>>>> e0b7f66a48977a48d14cf7b2a034215f6b1ddb00
