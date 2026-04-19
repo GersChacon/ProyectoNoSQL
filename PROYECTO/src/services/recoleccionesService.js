@@ -28,8 +28,8 @@ class RecoleccionesService {
         $project: {
           _id: 0,
           fecha: 1,
-          'recolector.nombre': 1,
-          'finca.nombre': 1,
+          recolector_nombre: '$recolector.nombre',
+          finca_nombre:      '$finca.nombre',
           cantidad_cajuelas: 1,
           cantidad_cuartillos: 1,
           pago_total: 1,
@@ -44,11 +44,11 @@ class RecoleccionesService {
       {
         $group: {
           _id: '$recolector.id',
-          nombre: { $first: '$recolector.nombre' },
-          total_cajuelas: { $sum: '$cantidad_cajuelas' },
-          total_cuartillos: { $sum: '$cantidad_cuartillos' },
-          total_pago: { $sum: '$pago_total' },
-          total_recolecciones: { $sum: 1 },
+          nombre:               { $first: '$recolector.nombre' },
+          total_cajuelas:       { $sum: '$cantidad_cajuelas' },
+          total_cuartillos:     { $sum: '$cantidad_cuartillos' },
+          total_pago:           { $sum: '$pago_total' },
+          total_recolecciones:  { $sum: 1 },
         },
       },
       {
@@ -64,7 +64,6 @@ class RecoleccionesService {
       { $sort: { total_cajuelas: -1 } },
     ]);
   }
-
 }
 
 module.exports = new RecoleccionesService();

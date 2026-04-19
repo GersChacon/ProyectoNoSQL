@@ -1,7 +1,7 @@
 {
-  "name": "Proyecto",
+  "name": "proyecto-nosql",
   "version": "1.0.0",
-  "description": "API REST Proyecto",
+  "description": "API REST - Sistema de Gestión de Cosecha de Café (NoSQL)",
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
@@ -11,7 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^2.2.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^5.2.1",
     "mongoose": "^9.2.1"
   },
