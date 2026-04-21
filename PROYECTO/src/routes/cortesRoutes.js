@@ -1,4 +1,3 @@
-// src/routes/cortesRoutes.js
 const express = require('express');
 const router = express.Router();
 const cortesController = require('../controllers/cortesController');

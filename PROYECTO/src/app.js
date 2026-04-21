@@ -43,7 +43,7 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'Publico', 'index.html'));
 });
 
-// Manejo global de errores
+// Manejo global de errores para evitar que el servidor se caiga por errores no controlados
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ error: 'Error interno del servidor' });
