@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"bf7a347225f44073a7aa036e19408e5c","collectionName":"auditoria","type":"collection"}
